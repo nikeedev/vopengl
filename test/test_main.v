@@ -3,5 +3,5 @@ import vopengl
 
 
 fn run() {
-	vopengl.
+	vopengl;
 }
