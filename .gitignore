@@ -1,6 +1,5 @@
 # Binaries for programs and plugins
 main
-vopengl
 *.exe
 *.exe~
 *.so
@@ -23,8 +22,8 @@ bin/
 *.db
 *.js
 
-vendor/include/
+# vendor/include
 
-vendor/lib/
+# vendor/lib
 
-vendor/src/
+# vendor/src
