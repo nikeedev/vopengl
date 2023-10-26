@@ -493,7 +493,7 @@ struct C.GLFWmonitor {
 }
 
 [typedef]
-struct GLFWwindow {
+struct C.GLFWwindow {
 };
 
 [typedef]
