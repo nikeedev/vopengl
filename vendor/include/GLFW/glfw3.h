@@ -1194,7 +1194,7 @@ typedef struct GLFWwindow GLFWwindow;
  *
  *  @ingroup input
  */
-typedef struct GLFWwindow GLFWwindow;
+typedef struct GLFWcursor GLFWcursor;
 
 /*! @brief The function pointer type for error callbacks.
  *

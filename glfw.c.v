@@ -487,7 +487,6 @@ pub const glfw_dont_care             = -1
 
 // api types
 
-
 [typedef]
 struct C.GLFWmonitor {
 }
@@ -497,8 +496,12 @@ struct C.GLFWwindow {
 }
 
 [typedef]
-pub type C.GLFWerrorfun = fn(error_code int, description &char)
+struct C.GLFWcursor {
+}
 
+pub type GLFWerrorfun = fn(error_code int, description &char)
+
+pub type GLFWcursorposfun = fn(window &C.GLFWwindow, xpos f64, ypos f64)
 
 [typedef]
 struct C.GLFWvidmode
@@ -521,6 +524,23 @@ struct C.GLFWvidmode
     //The refresh rate, in Hz, of the video mode.
     //
     refreshRate int
+}
+
+[typedef]
+struct C.GLFWgammaramp
+{
+    // An array of value describing the response of the red channel.
+    //
+    red &u16
+    // An array of value describing the response of the green channel.
+    //
+    green &u16
+    // An array of value describing the response of the blue channel.
+    //
+	blue &u16
+    // The number of elements in each array.
+    //
+   	size u8
 }
 
 [typedef]
@@ -606,11 +626,11 @@ pub fn C.glfwGetFramebufferSize(window &C.GLFWwindow, width &int, height &int) v
 
 pub fn C.glfwGetWindowFrameSize(window &C.GLFWwindow, left &int, top &int, right &int, bottom &int) voidptr
 
-pub fn C.glfwGetWindowContentScale(window &C.GLFWwindow, xscale &f32, yscale &32) voidptr
+pub fn C.glfwGetWindowContentScale(window &C.GLFWwindow, xscale &f64, yscale &32) voidptr
 
 pub fn C.glfwGetWindowOpacity(window &C.GLFWwindow) f32
 
-pub fn C.glfwSetWindowOpacity(window &C.GLFWwindow, opacity f32) voidptr
+pub fn C.glfwSetWindowOpacity(window &C.GLFWwindow, opacity f64) voidptr
 
 pub fn C.glfwIconifyWindow(window &C.GLFWwindow) voidptr
 
@@ -638,7 +658,7 @@ pub fn C.glfwPollEvents(voidptr) voidptr
 
 pub fn C.glfwWaitEvents(voidptr) voidptr
 
-pub fn C.glfwWaitEventsTimeout(timeout f32) voidptr
+pub fn C.glfwWaitEventsTimeout(timeout f64) voidptr
 
 pub fn C.glfwPostEmptyEvent(voidptr) voidptr
 
