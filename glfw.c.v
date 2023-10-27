@@ -1,7 +1,6 @@
 module vopengl
 
-#flag -ivendor/include
-// #flag -lvendor/lib/libglfw3.a
+#flag -Lvendor/lib/libglfw3.a
 #include "glfw/glfw3.h"
 
 pub const glfw_true = 1
@@ -414,163 +413,202 @@ pub const glfw_hovered = 0x0002000b
 
 pub const glfw_focus_on_show = 0x0002000c
 
-pub const glfw_samples                =0x0002100d
-pub const glfw_srgb_capable           =0x0002100e
-pub const glfw_refresh_rate           =0x0002100f
-pub const glfw_doublebuffer           =0x00021010
-pub const glfw_client_api             =0x00022001
-pub const glfw_context_version_major  =0x00022002
-pub const glfw_context_version_minor  =0x00022003
-pub const glfw_context_revision       =0x00022004
-pub const glfw_context_robustness     =0x00022005
-pub const glfw_opengl_forward_compat  =0x00022006
-pub const glfw_opengl_debug_context   =0x00022007
-pub const glfw_opengl_profile         =0x00022008
+pub const glfw_samples = 0x0002100d
+
+pub const glfw_srgb_capable = 0x0002100e
+
+pub const glfw_refresh_rate = 0x0002100f
+
+pub const glfw_doublebuffer = 0x00021010
+
+pub const glfw_client_api = 0x00022001
+
+pub const glfw_context_version_major = 0x00022002
+
+pub const glfw_context_version_minor = 0x00022003
+
+pub const glfw_context_revision = 0x00022004
+
+pub const glfw_context_robustness = 0x00022005
+
+pub const glfw_opengl_forward_compat = 0x00022006
+
+pub const glfw_opengl_debug_context = 0x00022007
+
+pub const glfw_opengl_profile = 0x00022008
 
 pub const glfw_context_release_behavior = 0x00022009
-pub const glfw_context_no_error       =0x0002200a
-pub const glfw_context_creation_api   =0x0002200b
-pub const glfw_scale_to_monitor       =0x0002200c
-pub const glfw_cocoa_retina_framebuffer =0x00023001
-pub const glfw_cocoa_frame_name         =0x00023002
-pub const glfw_cocoa_graphics_switching =0x00023003
 
-pub const glfw_x11_class_name         =0x00024001
-pub const glfw_x11_instance_name      =0x00024002
+pub const glfw_context_no_error = 0x0002200a
 
-pub const glfw_no_api                        = 0
-pub const glfw_opengl_api            = 0x00030001
-pub const glfw_opengl_es_api         = 0x00030002
+pub const glfw_context_creation_api = 0x0002200b
 
-pub const glfw_no_robustness             =      0
+pub const glfw_scale_to_monitor = 0x0002200c
+
+pub const glfw_cocoa_retina_framebuffer = 0x00023001
+
+pub const glfw_cocoa_frame_name = 0x00023002
+
+pub const glfw_cocoa_graphics_switching = 0x00023003
+
+pub const glfw_x11_class_name = 0x00024001
+
+pub const glfw_x11_instance_name = 0x00024002
+
+pub const glfw_no_api = 0
+
+pub const glfw_opengl_api = 0x00030001
+
+pub const glfw_opengl_es_api = 0x00030002
+
+pub const glfw_no_robustness = 0
+
 pub const glfw_no_reset_notification = 0x00031001
+
 pub const glfw_lose_context_on_reset = 0x00031002
 
-pub const glfw_opengl_any_profile      =        0
-pub const glfw_opengl_core_profile  =  0x00032001
+pub const glfw_opengl_any_profile = 0
+
+pub const glfw_opengl_core_profile = 0x00032001
+
 pub const glfw_opengl_compat_profile = 0x00032002
 
-pub const glfw_cursor              =   0x00033001
-pub const glfw_sticky_keys          =  0x00033002
-pub const glfw_sticky_mouse_buttons =  0x00033003
-pub const glfw_lock_key_mods        =  0x00033004
-pub const glfw_raw_mouse_motion     =  0x00033005
+pub const glfw_cursor = 0x00033001
 
-pub const glfw_cursor_normal        =  0x00034001
-pub const glfw_cursor_hidden        =  0x00034002
-pub const glfw_cursor_disabled      =  0x00034003
+pub const glfw_sticky_keys = 0x00033002
 
-pub const glfw_any_release_behavior   =         0
-pub const glfw_release_behavior_flush= 0x00035001
+pub const glfw_sticky_mouse_buttons = 0x00033003
+
+pub const glfw_lock_key_mods = 0x00033004
+
+pub const glfw_raw_mouse_motion = 0x00033005
+
+pub const glfw_cursor_normal = 0x00034001
+
+pub const glfw_cursor_hidden = 0x00034002
+
+pub const glfw_cursor_disabled = 0x00034003
+
+pub const glfw_any_release_behavior = 0
+
+pub const glfw_release_behavior_flush = 0x00035001
+
 pub const glfw_release_behavior_none = 0x00035002
-pub const glfw_native_context_api    = 0x00036001
-pub const glfw_egl_context_api       = 0x00036002
-pub const glfw_osmesa_context_api    = 0x00036003
 
-pub const glfw_arrow_cursor         =  0x00036001
-pub const glfw_ibeam_cursor         =  0x00036002
-pub const glfw_crosshair_cursor     =  0x00036003
-pub const glfw_hand_cursor          =  0x00036004
-pub const glfw_hresize_cursor       =  0x00036005
-pub const glfw_vresize_cursor       =  0x00036006
+pub const glfw_native_context_api = 0x00036001
 
-pub const glfw_connected            =  0x00040001
-pub const glfw_disconnected          = 0x00040002
+pub const glfw_egl_context_api = 0x00036002
 
-pub const glfw_joystick_hat_buttons  = 0x00050001
+pub const glfw_osmesa_context_api = 0x00036003
+
+pub const glfw_arrow_cursor = 0x00036001
+
+pub const glfw_ibeam_cursor = 0x00036002
+
+pub const glfw_crosshair_cursor = 0x00036003
+
+pub const glfw_hand_cursor = 0x00036004
+
+pub const glfw_hresize_cursor = 0x00036005
+
+pub const glfw_vresize_cursor = 0x00036006
+
+pub const glfw_connected = 0x00040001
+
+pub const glfw_disconnected = 0x00040002
+
+pub const glfw_joystick_hat_buttons = 0x00050001
 
 pub const glfw_cocoa_chdir_resources = 0x00051001
-pub const glfw_cocoa_menubar         = 0x00051002
 
-pub const glfw_dont_care             = -1
+pub const glfw_cocoa_menubar = 0x00051002
 
+pub const glfw_dont_care = -1
 
 // api types
 
 [typedef]
-struct C.GLFWmonitor {
+pub struct C.GLFWmonitor {
 }
 
 [typedef]
-struct C.GLFWwindow {
+pub struct C.GLFWwindow {
 }
 
 [typedef]
-struct C.GLFWcursor {
+pub struct C.GLFWcursor {
 }
 
-pub type GLFWerrorfun = fn(error_code int, description &char)
+pub type GLFWerrorfun = fn (error_code int, description &char)
 
-pub type GLFWcursorposfun = fn(window &C.GLFWwindow, xpos f64, ypos f64)
+pub type GLFWcursorposfun = fn (window &C.GLFWwindow, xpos f64, ypos f64)
+
+pub type GLFWframebuffersizefun = fn (window &C.GLFWwindow, width int, height int) voidptr
+
+pub type GLFWglproc = fn (voidptr) voidptr
 
 [typedef]
-struct C.GLFWvidmode
-{
-    //The width, in screen coordinates, of the video mode.
-    //
-    width int
-    //The height, in screen coordinates, of the video mode.
-    //
-    height int
-    //The bit depth of the red channel of the video mode.
-    //
-    redBits int
-    //The bit depth of the green channel of the video mode.
-    //
-    greenBits int
-    //The bit depth of the blue channel of the video mode.
-    //
-    blueBits int
-    //The refresh rate, in Hz, of the video mode.
-    //
-    refreshRate int
+pub struct C.GLFWvidmode {
+	// The width, in screen coordinates, of the video mode.
+	//
+	width int
+	// The height, in screen coordinates, of the video mode.
+	//
+	height int
+	// The bit depth of the red channel of the video mode.
+	//
+	redBits int
+	// The bit depth of the green channel of the video mode.
+	//
+	greenBits int
+	// The bit depth of the blue channel of the video mode.
+	//
+	blueBits int
+	// The refresh rate, in Hz, of the video mode.
+	//
+	refreshRate int
 }
 
 [typedef]
-struct C.GLFWgammaramp
-{
-    // An array of value describing the response of the red channel.
-    //
-    red &u16
-    // An array of value describing the response of the green channel.
-    //
-    green &u16
-    // An array of value describing the response of the blue channel.
-    //
+pub struct C.GLFWgammaramp {
+	// An array of value describing the response of the red channel.
+	//
+	red &u16
+	// An array of value describing the response of the green channel.
+	//
+	green &u16
+	// An array of value describing the response of the blue channel.
+	//
 	blue &u16
-    // The number of elements in each array.
-    //
-   	size u8
+	// The number of elements in each array.
+	//
+	size u8
 }
 
 [typedef]
-struct C.GLFWimage
-{
-    //* The width, in pixels, of this image.
-    //
-    width int
-    //* The height, in pixels, of this image.
-    //
-    height int
-    //* The pixel data of this image, arranged left-to-right, top-to-bottom.
-    //
+pub struct C.GLFWimage {
+	//* The width, in pixels, of this image.
+	//
+	width int
+	//* The height, in pixels, of this image.
+	//
+	height int
+	//* The pixel data of this image, arranged left-to-right, top-to-bottom.
+	//
 	pixels &char
 }
 
 [typedef]
-struct C.GLFWgamepadstate
-{
-    // * The states of each [gamepad button](@ref gamepad_buttons), `GLFW_PRESS`
-    // *  or `GLFW_RELEASE`.
-    //
-    buttons [15]u8
-    // * The states of each [gamepad axis](@ref gamepad_axes), in the range -1.0
-    // * to 1.0 inclusive.
-    //
-    axes [6]f32
+pub struct C.GLFWgamepadstate {
+	// * The states of each [gamepad button](@ref gamepad_buttons), `GLFW_PRESS`
+	// *  or `GLFW_RELEASE`.
+	//
+	buttons [15]u8
+	// * The states of each [gamepad axis](@ref gamepad_axes), in the range -1.0
+	// * to 1.0 inclusive.
+	//
+	axes [6]f32
 }
-
-
 
 // GLFW API functions
 
@@ -592,7 +630,7 @@ pub fn C.glfwGetPrimaryMonitor(voidptr) &C.GLFWmonitor
 
 pub fn C.glfwGetMonitorPos(monitor &C.GLFWmonitor, xpos &int, ypos &int)
 
-pub fn C.glfwGetMonitorName(monitor C.&GLFWmonitor)
+pub fn C.glfwGetMonitorName(monitor C., GLFWmonitor)
 
 pub fn C.glfwGetVideoModes(monitor &C.GLFWmonitor, count int) &C.GLFWvidmode
 
@@ -617,6 +655,7 @@ pub fn C.glfwSetWindowPos(window &C.GLFWwindow, xpos int, ypos int) voidptr
 pub fn C.glfwGetWindowSize(window &C.GLFWwindow, width &int, height &int) voidptr
 
 pub fn C.glfwSetWindowSizeLimits(window &C.GLFWwindow, minwidth int, minheight int, maxwidth int, maxheight int) voidptr
+
 
 pub fn C.glfwSetWindowAspectRatio(window &C.GLFWwindow, numer int, denom int) voidptr
 
@@ -662,6 +701,28 @@ pub fn C.glfwWaitEventsTimeout(timeout f64) voidptr
 
 pub fn C.glfwPostEmptyEvent(voidptr) voidptr
 
-pub fn C.glfwGetInputMode(window &GLFWwindow, mode int) int
+pub fn C.glfwGetInputMode(window &C.GLFWwindow, mode int) int
 
+pub fn C.glfwSetInputMode(window &C.GLFWwindow, mode int, value int) voidptr
 
+pub fn C.glfwRawMouseMotionSupported(voidptr) int
+
+pub fn C.glfwGetKeyName(key int, scancode int) &char
+
+pub fn C.glfwGetKeyScancode(key int) int
+
+pub fn C.glfwGetKey(window &C.GLFWwindow, key int) int
+
+pub fn C.glfwGetMouseButton(window &C.GLFWwindow, button int) int
+
+pub fn C.glfwGetCursorPos(window &C.GLFWwindow, xpos &f64, ypos &f64) voidptr
+
+pub fn C.glfwMakeContextCurrent(window &C.GLFWwindow) voidptr
+
+pub fn C.glfwGetCurrentContext(voidptr) &C.GLFWwindow
+
+pub fn C.glfwSwapBuffers(window &C.GLFWwindow) voidptr
+
+pub fn C.glfwSetFramebufferSizeCallback(window &C.GLFWwindow, callback GLFWframebuffersizefun) GLFWframebuffersizefun
+
+pub fn C.glfwGetProcAddress(procname &char) GLFWglproc
