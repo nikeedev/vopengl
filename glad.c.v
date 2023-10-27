@@ -1,6 +1,6 @@
 module vopengl
 
-#flag /vendor/src/glad.c
+#flag -Lsrc/libglad.a
 #include "glad/glad.h"
 #include "KHR/khrplatform.h"
 

@@ -1,6 +1,6 @@
 module vopengl
 
-#flag -Lvendor/lib/libglfw3.a
+#flag -Llib/libglfw3.a
 #include "glfw/glfw3.h"
 
 pub const glfw_true = 1
