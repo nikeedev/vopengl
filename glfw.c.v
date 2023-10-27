@@ -494,37 +494,62 @@ struct C.GLFWmonitor {
 
 [typedef]
 struct C.GLFWwindow {
-};
+}
 
 [typedef]
-void (* GLFWerrorfun)(int error_code, const char* description);
+pub type C.GLFWerrorfun = fn(error_code int, description &char)
+
+
+[typedef]
+struct C.GLFWvidmode
+{
+    //The width, in screen coordinates, of the video mode.
+    //
+    width int
+    //The height, in screen coordinates, of the video mode.
+    //
+    height int
+    //The bit depth of the red channel of the video mode.
+    //
+    redBits int
+    //The bit depth of the green channel of the video mode.
+    //
+    greenBits int
+    //The bit depth of the blue channel of the video mode.
+    //
+    blueBits int
+    //The refresh rate, in Hz, of the video mode.
+    //
+    refreshRate int
+}
 
 [typedef]
 struct C.GLFWimage
 {
-    /*! The width, in pixels, of this image.
-     */
-    width int;
-    /*! The height, in pixels, of this image.
-     */
-    height int;
-    /*! The pixel data of this image, arranged left-to-right, top-to-bottom.
-     */
-	pixels &char;
+    //* The width, in pixels, of this image.
+    //
+    width int
+    //* The height, in pixels, of this image.
+    //
+    height int
+    //* The pixel data of this image, arranged left-to-right, top-to-bottom.
+    //
+	pixels &char
 }
 
 [typedef]
 struct C.GLFWgamepadstate
 {
-    /*! The states of each [gamepad button](@ref gamepad_buttons), `GLFW_PRESS`
-     *  or `GLFW_RELEASE`.
-     */
-    buttons []u8{len:15};
-    /*! The states of each [gamepad axis](@ref gamepad_axes), in the range -1.0
-     *  to 1.0 inclusive.
-     */
-    axes []f32{len:6};
+    // * The states of each [gamepad button](@ref gamepad_buttons), `GLFW_PRESS`
+    // *  or `GLFW_RELEASE`.
+    //
+    buttons [15]u8
+    // * The states of each [gamepad axis](@ref gamepad_axes), in the range -1.0
+    // * to 1.0 inclusive.
+    //
+    axes [6]f32
 }
+
 
 
 // GLFW API functions
@@ -543,80 +568,80 @@ pub fn C.glfwSetErrorCallback(callback C.GLFWerrorfun)
 
 pub fn C.glfwGetMonitors(count &int) &&C.GLFWmonitor
 
-pub fn C.glfwGetPrimaryMonitor(voidptr) &GLFWmonitor
+pub fn C.glfwGetPrimaryMonitor(voidptr) &C.GLFWmonitor
 
 pub fn C.glfwGetMonitorPos(monitor &C.GLFWmonitor, xpos &int, ypos &int)
 
 pub fn C.glfwGetMonitorName(monitor C.&GLFWmonitor)
 
-pub fn C.glfwGetVideoModes(monitor &GLFWmonitor, count int) &GLFWvidmode
+pub fn C.glfwGetVideoModes(monitor &C.GLFWmonitor, count int) &C.GLFWvidmode
 
-pub fn C.glfwWindowHint(int hint, int value) voidptr
+pub fn C.glfwWindowHint(hint int, value int) voidptr
 
-pub fn C.glfwCreateWindow(width int, height int, title &char, monitor &GLFWmonitor, share &GLFWwindow) &GLFWwindow
+pub fn C.glfwCreateWindow(width int, height int, title &char, monitor &C.GLFWmonitor, share &C.GLFWwindow) &C.GLFWwindow
 
-pub fn C.glfwDestroyWindow(window &GLFWwindow) voidptr
+pub fn C.glfwDestroyWindow(window &C.GLFWwindow) voidptr
 
-pub fn C.glfwWindowShouldClose(window &GLFWwindow) int
+pub fn C.glfwWindowShouldClose(window &C.GLFWwindow) int
 
-pub fn C.glfwSetWindowShouldClose(window &GLFWwindow, value int) int
+pub fn C.glfwSetWindowShouldClose(window &C.GLFWwindow, value int) int
 
-void glfwSetWindowTitle(GLFWwindow* window, const char* title);
+pub fn C.glfwSetWindowTitle(window &C.GLFWwindow, title &char) voidptr
 
-void glfwSetWindowIcon(GLFWwindow* window, int count, const GLFWimage* images);
+pub fn C.glfwSetWindowIcon(window &C.GLFWwindow, count int, images &C.GLFWimage) voidptr
 
-void glfwGetWindowPos(GLFWwindow* window, int* xpos, int* ypos);
+pub fn C.glfwGetWindowPos(window &C.GLFWwindow, xpos &int, ypos &int) voidptr
 
-void glfwSetWindowPos(GLFWwindow* window, int xpos, int ypos);
+pub fn C.glfwSetWindowPos(window &C.GLFWwindow, xpos int, ypos int) voidptr
 
-void glfwGetWindowSize(GLFWwindow* window, int* width, int* height);
+pub fn C.glfwGetWindowSize(window &C.GLFWwindow, width &int, height &int) voidptr
 
-void glfwSetWindowSizeLimits(GLFWwindow* window, int minwidth, int minheight, int maxwidth, int maxheight);
+pub fn C.glfwSetWindowSizeLimits(window &C.GLFWwindow, minwidth int, minheight int, maxwidth int, maxheight int) voidptr
 
-void glfwSetWindowAspectRatio(GLFWwindow* window, int numer, int denom);
+pub fn C.glfwSetWindowAspectRatio(window &C.GLFWwindow, numer int, denom int) voidptr
 
-void glfwSetWindowSize(GLFWwindow* window, int width, int height);
+pub fn C.glfwSetWindowSize(window &C.GLFWwindow, width int, height int) voidptr
 
-void glfwGetFramebufferSize(GLFWwindow* window, int* width, int* height);
+pub fn C.glfwGetFramebufferSize(window &C.GLFWwindow, width &int, height &int) voidptr
 
-void glfwGetWindowFrameSize(GLFWwindow* window, int* left, int* top, int* right, int* bottom);
+pub fn C.glfwGetWindowFrameSize(window &C.GLFWwindow, left &int, top &int, right &int, bottom &int) voidptr
 
-void glfwGetWindowContentScale(GLFWwindow* window, float* xscale, float* yscale);
+pub fn C.glfwGetWindowContentScale(window &C.GLFWwindow, xscale &f32, yscale &32) voidptr
 
-float glfwGetWindowOpacity(GLFWwindow* window);
+pub fn C.glfwGetWindowOpacity(window &C.GLFWwindow) f32
 
-void glfwSetWindowOpacity(GLFWwindow* window, float opacity);
+pub fn C.glfwSetWindowOpacity(window &C.GLFWwindow, opacity f32) voidptr
 
-void glfwIconifyWindow(GLFWwindow* window);
+pub fn C.glfwIconifyWindow(window &C.GLFWwindow) voidptr
 
-void glfwRestoreWindow(GLFWwindow* window);
+pub fn C.glfwRestoreWindow(window &C.GLFWwindow) voidptr
 
-void glfwMaximizeWindow(GLFWwindow* window);
+pub fn C.glfwMaximizeWindow(window &C.GLFWwindow) voidptr
 
-void glfwShowWindow(GLFWwindow* window);
+pub fn C.glfwShowWindow(window &C.GLFWwindow) voidptr
 
-void glfwHideWindow(GLFWwindow* window);
+pub fn C.glfwHideWindow(window &C.GLFWwindow) voidptr
 
-void glfwFocusWindow(GLFWwindow* window);
+pub fn C.glfwFocusWindow(window &C.GLFWwindow) voidptr
 
-void glfwRequestWindowAttention(GLFWwindow* window);
+pub fn C.glfwRequestWindowAttention(window &C.GLFWwindow) voidptr
 
-GLFWmonitor* glfwGetWindowMonitor(GLFWwindow* window);
+pub fn C.glfwGetWindowMonitor(window &C.GLFWwindow) &C.GLFWmonitor
 
-void glfwSetWindowMonitor(GLFWwindow* window, GLFWmonitor* monitor, int xpos, int ypos, int width, int height, int refreshRate);
+pub fn C.glfwSetWindowMonitor(window &C.GLFWwindow, monitor &C.GLFWmonitor, xpos int, ypos int, width int, height int, refreshRate int) voidptr
 
-int glfwGetWindowAttrib(GLFWwindow* window, int attrib);
+pub fn C.glfwGetWindowAttrib(window &C.GLFWwindow, attrib int) int
 
-void glfwSetWindowAttrib(GLFWwindow* window, int attrib, int value);
+pub fn C.glfwSetWindowAttrib(window &C.GLFWwindow, attrib int, value int) voidptr
 
-void glfwPollEvents(void);
+pub fn C.glfwPollEvents(voidptr) voidptr
 
-void glfwWaitEvents(void);
+pub fn C.glfwWaitEvents(voidptr) voidptr
 
-void glfwWaitEventsTimeout(double timeout);
+pub fn C.glfwWaitEventsTimeout(timeout f32) voidptr
 
-void glfwPostEmptyEvent(void);
+pub fn C.glfwPostEmptyEvent(voidptr) voidptr
 
-int glfwGetInputMode(GLFWwindow* window, int mode);
+pub fn C.glfwGetInputMode(window &GLFWwindow, mode int) int
 
 
