@@ -7,9 +7,9 @@ const screen_height = 600
 
 // methods
 
-fn framebuffer_size_callback(window &vopengl.C.GLFWwindow, width int, height int)
+fn framebuffer_size_callback(window &vopengl.GLFWwindow, width int, height int)
 {
-	vopengl.C.glViewport(0, 0, width, height)
+	vopengl.glViewport(0, 0, width, height)
 }
 
 fn process_input(window &vopengl.C.GLFWwindow)
@@ -39,7 +39,7 @@ fn main() {
 		vopengl.C.glfwWindowHint(vopengl.glfw_opengl_forward_compat, vopengl.gl_true)
 	}
 
-	mut window &vopengl.C.GLFWwindow := vopengl.C.glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "LearnOpenGL", 0, 0)
+	mut window := vopengl.C.glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "LearnOpenGL", 0, 0)
 
 	if window == unsafe { nil }
 	{
@@ -78,7 +78,6 @@ fn main() {
 	vopengl.C.glGenBuffers(1, &VBO)
 	vopengl.C.glBindBuffer(vopengl.gl_array_buffer, VBO)
 	vopengl.C.glBufferData(vopengl.gl_array_buffer, sizeof(vertices), vertices, vopengl.gl_static_draw)
-
 
 	// Vertex
 	vertexShaderSource := readFile("shader.vs")
